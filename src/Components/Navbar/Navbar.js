@@ -8,7 +8,12 @@ import {
   Span,
   SelectOption,
   Button,
+  LiInput,
   InputSearch,
+  //Responsive Search
+  LiResp,
+  Form,
+  SelectResp,
 } from "./StyledNavbar";
 const Navbar = () => {
   return (
@@ -24,18 +29,19 @@ const Navbar = () => {
           <img
             src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1640461930/amazzonas/gwa6jfschtxjq9unwrt8.png"
             alt=""
-            style={{ height: "30px", padding: "0 10px 0 0" }}
+            height="20px"
           />
-          Elige tu dirección
+          <p>Elige tu dirección</p>
         </Li>
-        <Li>
+        <LiInput>
           <form action="">
-            <SelectOption name="select">
-              <option value="value1">Value 1</option>
-              <option value="value2" selected>
-                Value 2
+            <SelectOption name="select" defaultValue={"DEFAULT"}>
+              <option value="DEFAULT" disabled>
+                Categorias
               </option>
-              <option value="value3">Value 3</option>
+              <option value="1">Mr</option>
+              <option value="2">Mrs</option>
+              <option value="3">Ms</option>
             </SelectOption>
             <InputSearch type="text" />
             <Button>
@@ -46,9 +52,8 @@ const Navbar = () => {
               />
             </Button>
           </form>
-        </Li>
+        </LiInput>
         <Li>Iniciar seción</Li>
-        <Li>Devoluciones Y Pedidos</Li>
         <LiCarrito>
           <img
             src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1640461930/amazzonas/qxgnae7wozfqx6i01vxy.png"
@@ -58,6 +63,34 @@ const Navbar = () => {
           <Span>0</Span>
         </LiCarrito>
       </Ul>
+      <LiResp>
+        <Form action="">
+          <SelectResp name="select" defaultValue={"DEFAULT"}>
+            <option value="DEFAULT" disabled>
+              Categorias
+            </option>
+            <option value="1">Mr</option>
+            <option value="2">Mrs</option>
+            <option value="3">Ms</option>
+          </SelectResp>
+          <input type="text" style={{ width: "70%" }} />
+          <button
+            style={{
+              width: "10%",
+              border: "none",
+              borderTopRightRadius: "10px",
+              borderBottomRightRadius: "10px",
+              background: "#febd69",
+            }}
+          >
+            <img
+              src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1640461930/amazzonas/vwlwbedkqoyzpt2ht8sr.png"
+              alt=""
+              style={{ height: "20px" }}
+            />
+          </button>
+        </Form>
+      </LiResp>
     </Nav>
   );
 };
