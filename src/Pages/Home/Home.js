@@ -1,10 +1,11 @@
 import React from 'react';
-
+import Categories from '../../containers/Categories/Categories'
+import {HomeContainer} from './StyledHome.js'
 const Home = () => {
     return (
-        <div>
-            <h1>Home</h1>
-        </div>
+        <HomeContainer>
+            <Categories/>
+        </HomeContainer>
     );
 };
 

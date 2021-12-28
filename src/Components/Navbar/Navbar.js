@@ -5,6 +5,7 @@ import {
   Li,
   Logo,
   LiCarrito,
+  Carrito,
   Span,
   SelectOption,
   Button,
@@ -55,10 +56,9 @@ const Navbar = () => {
         </LiInput>
         <Li>Iniciar seción</Li>
         <LiCarrito>
-          <img
+          <Carrito
             src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1640461930/amazzonas/qxgnae7wozfqx6i01vxy.png"
             alt=""
-            style={{ height: "30px" }}
           />
           <Span>0</Span>
         </LiCarrito>

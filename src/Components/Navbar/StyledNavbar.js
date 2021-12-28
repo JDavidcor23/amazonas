@@ -38,13 +38,13 @@ export const LiInput = styled.li`
      @media screen and (max-width: 870px) {
         display: none;
     } 
-
-`
+    
+    `
 export const LiCarrito = styled.li`
     list-style: none;
     position: relative;
-
-`
+    
+    `
 export const Span = styled.span`
     position: absolute;
     top: -20px;
@@ -52,7 +52,10 @@ export const Span = styled.span`
     color: #f08804;
     font-weight: bold;
     font-size: 1.1rem;  
-`
+    @media screen and (max-width: 600px) {
+        right: 4px;
+    } 
+    `
 export const Logo = styled.img`
     width: 110px;
     height: 40px;
@@ -61,6 +64,12 @@ export const Logo = styled.img`
         width: 80px;
     }
     `
+export const Carrito = styled.img`
+    height: 30px;
+    @media screen and (max-width: 600px) {
+        height: 20px;
+    }
+`
 export const SelectOption = styled.select`
     height: 30px;
     border-top-left-radius: 10px;
