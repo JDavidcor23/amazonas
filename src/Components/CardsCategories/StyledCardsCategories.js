@@ -5,10 +5,10 @@ export const LinkCards = styled(Link)`
     display: flex;
     text-align: center;
     flex-direction: column-reverse;
-    width: 260px;
+    
+    width: 250px;
     text-decoration:none;
     margin: 10px 10px;
-    cursor: pointer;
     background: white;
     height: auto;
     padding: 10px;
@@ -16,4 +16,7 @@ export const LinkCards = styled(Link)`
     &:hover{
         color:#a65f04;
     }
+     @media screen and (max-width: 600px) {
+        width: 200px;
+    }  
 `

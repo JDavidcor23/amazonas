@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Nav,
   Ul,
@@ -54,7 +55,9 @@ const Navbar = () => {
             </Button>
           </form>
         </LiInput>
-        <Li>Iniciar seción</Li>
+        <Link to="/login" style={{textDecoration:"none", color:"white"}}>
+          <Li>Iniciar seción</Li>
+        </Link>
         <LiCarrito>
           <Carrito
             src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1640461930/amazzonas/qxgnae7wozfqx6i01vxy.png"
