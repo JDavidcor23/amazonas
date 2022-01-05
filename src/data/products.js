@@ -8,7 +8,7 @@ export const products = [
         date:"23 agosto 2021",
         link:"Oculus",
         price:299,
-        about:"Hardware de siguiente nivel: Haz que cada movimiento cuente con un procesador increíblemente rápido y nuestra pantalla de la más alta resolución"
+        about:"Hardware de siguiente nivel: Haz que cada movimiento cuente con un procesador increíblemente rápido y nuestra pantalla de la más alta resolución. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt error, laudantium sed iste quas explicabo officia, quae nobis, iusto libero ducimus. Expedita nostrum omnis enim corporis eligendi corrupti dolor sunt!.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt error, laudantium sed iste quas explicabo officia, quae nobis, iusto libero ducimus. Expedita nostrum omnis enim corporis eligendi corrupti dolor sunt!"
     },
     {
         id:2,
@@ -19,7 +19,7 @@ export const products = [
         date:"23 agosto 2021",
         link:"Oculus",
         price:299,
-        about:"Hardware de siguiente nivel: Haz que cada movimiento cuente con un procesador increíblemente rápido y nuestra pantalla de la más alta resolución"
+        about:"Hardware de siguiente nivel: Haz que cada movimiento cuente con un procesador increíblemente rápido y nuestra pantalla de la más alta resolución. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt error, laudantium sed iste quas explicabo officia, quae nobis, iusto libero ducimus. Expedita nostrum omnis enim corporis eligendi corrupti dolor sunt!.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt error, laudantium sed iste quas explicabo officia, quae nobis, iusto libero ducimus. Expedita nostrum omnis enim corporis eligendi corrupti dolor sunt!"
     },
     {
         id:3,
@@ -30,7 +30,7 @@ export const products = [
         date:"23 agosto 2021",
         link:"Oculus",
         price:299,
-        about:"Hardware de siguiente nivel: Haz que cada movimiento cuente con un procesador increíblemente rápido y nuestra pantalla de la más alta resolución"
+        about:"Hardware de siguiente nivel: Haz que cada movimiento cuente con un procesador increíblemente rápido y nuestra pantalla de la más alta resolución. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt error, laudantium sed iste quas explicabo officia, quae nobis, iusto libero ducimus. Expedita nostrum omnis enim corporis eligendi corrupti dolor sunt!.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt error, laudantium sed iste quas explicabo officia, quae nobis, iusto libero ducimus. Expedita nostrum omnis enim corporis eligendi corrupti dolor sunt!"
     },
     {
         id:4,
@@ -41,7 +41,7 @@ export const products = [
         date:"23 agosto 2021",
         link:"Oculus",
         price:299,
-        about:"Hardware de siguiente nivel: Haz que cada movimiento cuente con un procesador increíblemente rápido y nuestra pantalla de la más alta resolución"
+        about:"Hardware de siguiente nivel: Haz que cada movimiento cuente con un procesador increíblemente rápido y nuestra pantalla de la más alta resolución. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt error, laudantium sed iste quas explicabo officia, quae nobis, iusto libero ducimus. Expedita nostrum omnis enim corporis eligendi corrupti dolor sunt!.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt error, laudantium sed iste quas explicabo officia, quae nobis, iusto libero ducimus. Expedita nostrum omnis enim corporis eligendi corrupti dolor sunt!"
     },
     {
         id:5,
@@ -52,7 +52,7 @@ export const products = [
         date:"23 agosto 2021",
         link:"Oculus",
         price:299,
-        about:"Hardware de siguiente nivel: Haz que cada movimiento cuente con un procesador increíblemente rápido y nuestra pantalla de la más alta resolución"
+        about:"Hardware de siguiente nivel: Haz que cada movimiento cuente con un procesador increíblemente rápido y nuestra pantalla de la más alta resolución. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt error, laudantium sed iste quas explicabo officia, quae nobis, iusto libero ducimus. Expedita nostrum omnis enim corporis eligendi corrupti dolor sunt!.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt error, laudantium sed iste quas explicabo officia, quae nobis, iusto libero ducimus. Expedita nostrum omnis enim corporis eligendi corrupti dolor sunt!"
     },
     {
         id:6,
@@ -63,7 +63,7 @@ export const products = [
         date:"23 agosto 2021",
         link:"Oculus",
         price:299,
-        about:"Hardware de siguiente nivel: Haz que cada movimiento cuente con un procesador increíblemente rápido y nuestra pantalla de la más alta resolución"
+        about:"Hardware de siguiente nivel: Haz que cada movimiento cuente con un procesador increíblemente rápido y nuestra pantalla de la más alta resolución. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt error, laudantium sed iste quas explicabo officia, quae nobis, iusto libero ducimus. Expedita nostrum omnis enim corporis eligendi corrupti dolor sunt!.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt error, laudantium sed iste quas explicabo officia, quae nobis, iusto libero ducimus. Expedita nostrum omnis enim corporis eligendi corrupti dolor sunt!"
     },
     {
         id:7,
@@ -74,7 +74,7 @@ export const products = [
         date:"23 agosto 2021",
         link:"Oculus",
         price:299,
-        about:"Hardware de siguiente nivel: Haz que cada movimiento cuente con un procesador increíblemente rápido y nuestra pantalla de la más alta resolución"
+        about:"Hardware de siguiente nivel: Haz que cada movimiento cuente con un procesador increíblemente rápido y nuestra pantalla de la más alta resolución. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt error, laudantium sed iste quas explicabo officia, quae nobis, iusto libero ducimus. Expedita nostrum omnis enim corporis eligendi corrupti dolor sunt!.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt error, laudantium sed iste quas explicabo officia, quae nobis, iusto libero ducimus. Expedita nostrum omnis enim corporis eligendi corrupti dolor sunt!"
     },
     {
         id:8,
@@ -85,7 +85,7 @@ export const products = [
         date:"23 agosto 2021",
         link:"Oculus",
         price:299,
-        about:"Hardware de siguiente nivel: Haz que cada movimiento cuente con un procesador increíblemente rápido y nuestra pantalla de la más alta resolución"
+        about:"Hardware de siguiente nivel: Haz que cada movimiento cuente con un procesador increíblemente rápido y nuestra pantalla de la más alta resolución. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt error, laudantium sed iste quas explicabo officia, quae nobis, iusto libero ducimus. Expedita nostrum omnis enim corporis eligendi corrupti dolor sunt!.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt error, laudantium sed iste quas explicabo officia, quae nobis, iusto libero ducimus. Expedita nostrum omnis enim corporis eligendi corrupti dolor sunt!"
     },
     {
         id:9,
@@ -96,7 +96,7 @@ export const products = [
         date:"23 agosto 2021",
         link:"Oculus",
         price:299,
-        about:"Hardware de siguiente nivel: Haz que cada movimiento cuente con un procesador increíblemente rápido y nuestra pantalla de la más alta resolución"
+        about:"Hardware de siguiente nivel: Haz que cada movimiento cuente con un procesador increíblemente rápido y nuestra pantalla de la más alta resolución. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt error, laudantium sed iste quas explicabo officia, quae nobis, iusto libero ducimus. Expedita nostrum omnis enim corporis eligendi corrupti dolor sunt!.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt error, laudantium sed iste quas explicabo officia, quae nobis, iusto libero ducimus. Expedita nostrum omnis enim corporis eligendi corrupti dolor sunt!"
     },
     {
         id:10,
@@ -107,6 +107,6 @@ export const products = [
         date:"23 agosto 2021",
         link:"Oculus",
         price:299,
-        about:"Hardware de siguiente nivel: Haz que cada movimiento cuente con un procesador increíblemente rápido y nuestra pantalla de la más alta resolución"
+        about:"Hardware de siguiente nivel: Haz que cada movimiento cuente con un procesador increíblemente rápido y nuestra pantalla de la más alta resolución. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt error, laudantium sed iste quas explicabo officia, quae nobis, iusto libero ducimus. Expedita nostrum omnis enim corporis eligendi corrupti dolor sunt!.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt error, laudantium sed iste quas explicabo officia, quae nobis, iusto libero ducimus. Expedita nostrum omnis enim corporis eligendi corrupti dolor sunt!"
     },
 ]

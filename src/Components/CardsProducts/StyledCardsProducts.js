@@ -9,7 +9,7 @@ export const Moneda = styled.span`
     font-size: 0.8rem;
     font-weight: bold;
     position: absolute;
-    left: -2px;
+    left: 0px;
 `
 export const Cero = styled.span`
     font-size: 0.8rem;

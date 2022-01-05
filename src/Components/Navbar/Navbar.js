@@ -22,10 +22,12 @@ const Navbar = () => {
     <Nav>
       <Ul>
         <Li>
-          <Logo
-            src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1640477276/amazzonas/rg1jkqcdlfez0tzh0iej.png"
-            alt="amazonas logo"
-          />
+          <Link to="/">
+            <Logo
+              src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1640477276/amazzonas/rg1jkqcdlfez0tzh0iej.png"
+              alt="amazonas logo"
+            />
+          </Link>
         </Li>
         <Li>
           <img
@@ -58,13 +60,15 @@ const Navbar = () => {
         <Link to="/login" style={{textDecoration:"none", color:"white"}}>
           <Li>Iniciar seción</Li>
         </Link>
-        <LiCarrito>
-          <Carrito
-            src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1640461930/amazzonas/qxgnae7wozfqx6i01vxy.png"
-            alt=""
-          />
-          <Span>0</Span>
-        </LiCarrito>
+        <Link to="/shopping_cart">
+          <LiCarrito>
+            <Carrito
+              src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1640461930/amazzonas/qxgnae7wozfqx6i01vxy.png"
+              alt=""
+            />
+            <Span>0</Span>
+          </LiCarrito>
+        </Link>
       </Ul>
       <LiResp>
         <Form action="">

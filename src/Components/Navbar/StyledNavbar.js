@@ -82,10 +82,11 @@ export const Button = styled.button`
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     background: #febd69;
+    position: absolute;
     `
 export const InputSearch = styled.input`
     height: 30px;
-    `
+`
 
 
 

@@ -5,6 +5,7 @@ import Navbar from '../../Components/Navbar/Navbar'
 import {products} from '../../data/products'
 import {Container} from './StyledProducts'
 const Products = () => {
+    
     return (
         <div>
             <Navbar/>

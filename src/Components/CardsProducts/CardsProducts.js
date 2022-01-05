@@ -1,8 +1,11 @@
 import React from "react";
 import { ContainerPrice, Moneda, Cero, LinkCards } from "./StyledCardsProducts";
 const CardsProducts = ({ product }) => {
+  const guardarLocalStorage = (id) =>{
+    localStorage.setItem("detailId", id)
+  }
   return (
-    <LinkCards to="/">
+    <LinkCards to="/detail" onClick={()=> guardarLocalStorage(product.id)}>
       <img src={product.img1} alt={product.name} width="100%" />
       <h6>{product.name}</h6>
       <p>{product.date}</p>
@@ -12,7 +15,6 @@ const CardsProducts = ({ product }) => {
         width="30%"
       />
       <ContainerPrice>
-        {/* <Link to="/" style={{ textDecoration: "none" }}> */}
         <p>{product.link}</p>
         <p style={{ margin: "0 0 0 20px", fontSize: "1.2rem" }}>
           <Moneda>us$</Moneda>
