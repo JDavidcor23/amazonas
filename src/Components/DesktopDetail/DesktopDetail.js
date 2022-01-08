@@ -12,14 +12,14 @@ const DesktopDetail = ({product}) => {
         setImg(img)
     }
     return (
-        <DesktopDiv>
+    <DesktopDiv>
         <Images>
             <ReactImageMagnify style={{zIndex:"1"}} {...{
             smallImage: {
                 alt: 'Wristwatch by Ted Baker London',
                 isFluidWidth: false,
                 src: img,
-                width: 300,
+                width: 350,
                 height: 300
             },
             largeImage: {

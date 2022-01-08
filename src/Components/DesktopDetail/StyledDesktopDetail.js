@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export const DesktopDiv = styled.div`
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    @media screen and (max-width: 650px) {
+    display: flex; 
+    width: 90%;
+    align-items: flex-start;
+    margin-top:20px;
+    @media screen and (max-width: 750px) {
         display: none;
     }
 `
@@ -13,7 +14,7 @@ export const Images = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin:0 10px 0 0;
+    margin:0 20px 0 0;
 `
 export const ImgSelect = styled.img`
     width: 70px;

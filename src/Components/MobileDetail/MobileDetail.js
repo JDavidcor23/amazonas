@@ -19,7 +19,7 @@ const MobileDetail = ({product}) => {
                 alt="estrellas"
                 width="20%"
                 />
-            <img src={img} alt="" />
+            <img src={img} alt="" style={{marginTop:"10px", width:"70%"}}/>
             <div style={{ width: "80%", display: "flex", justifyContent: "center", marginTop:"10px" }}>
                 <img
                 src={product.img1}

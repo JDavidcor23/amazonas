@@ -8,16 +8,44 @@ import {
   LiCarrito,
   Carrito,
   Span,
-  SelectOption,
   Button,
   LiInput,
   InputSearch,
   //Responsive Search
   LiResp,
   Form,
-  SelectResp,
+  ButtonResp,
 } from "./StyledNavbar";
+import { getAuth,onAuthStateChanged } from "firebase/auth";
+import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux';
+import { logout } from '../../actions/actionLogin';
 const Navbar = () => {
+
+  const navigate = useNavigate();
+
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+      dispatch(logout())
+      navigate("/login")
+  }
+
+
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false)
+  React.useEffect(() => {
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+        if(user?.uid){
+         setIsLoggedIn(true)
+        }
+        else{
+         setIsLoggedIn(false)
+        }
+    })
+
+ 
+  }, [setIsLoggedIn])
   return (
     <Nav>
       <Ul>
@@ -39,26 +67,20 @@ const Navbar = () => {
         </Li>
         <LiInput>
           <form action="">
-            <SelectOption name="select" defaultValue={"DEFAULT"}>
-              <option value="DEFAULT" disabled>
-                Categorias
-              </option>
-              <option value="1">Mr</option>
-              <option value="2">Mrs</option>
-              <option value="3">Ms</option>
-            </SelectOption>
             <InputSearch type="text" />
             <Button>
               <img
                 src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1640461930/amazzonas/vwlwbedkqoyzpt2ht8sr.png"
                 alt=""
-                style={{ height: "20px" }}
+                style={{ height: "20px", margin:"4px 0 0 0" }}
               />
             </Button>
           </form>
         </LiInput>
         <Link to="/login" style={{textDecoration:"none", color:"white"}}>
-          <Li>Iniciar seción</Li>
+          {isLoggedIn ?
+          <button onClick={() => handleLogout()}>Logout</button>
+          :<Li>Iniciar seción</Li>}
         </Link>
         <Link to="/shopping_cart">
           <LiCarrito>
@@ -72,30 +94,18 @@ const Navbar = () => {
       </Ul>
       <LiResp>
         <Form action="">
-          <SelectResp name="select" defaultValue={"DEFAULT"}>
-            <option value="DEFAULT" disabled>
-              Categorias
-            </option>
-            <option value="1">Mr</option>
-            <option value="2">Mrs</option>
-            <option value="3">Ms</option>
-          </SelectResp>
-          <input type="text" style={{ width: "70%" }} />
-          <button
-            style={{
-              width: "10%",
-              border: "none",
-              borderTopRightRadius: "10px",
-              borderBottomRightRadius: "10px",
-              background: "#febd69",
-            }}
+          <input type="text" style={{ 
+            width: "80%",
+            borderTopLeftRadius: "10px",
+            borderBottomLeftRadius: "10px", }} />
+          <ButtonResp
           >
             <img
               src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1640461930/amazzonas/vwlwbedkqoyzpt2ht8sr.png"
               alt=""
-              style={{ height: "20px" }}
+              style={{ height: "20px", margin:"4px 0 0 0" }}
             />
-          </button>
+          </ButtonResp>
         </Form>
       </LiResp>
     </Nav>

@@ -70,14 +70,10 @@ export const Carrito = styled.img`
         height: 20px;
     }
 `
-export const SelectOption = styled.select`
-    height: 30px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-`
 export const Button = styled.button`
-    height: 30px;
+    height: 29px;
     border: none;
+    margin: 1px 0 0 0;
     width: 40px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -86,6 +82,8 @@ export const Button = styled.button`
     `
 export const InputSearch = styled.input`
     height: 30px;
+    border-top-left-radius:20px;
+    border-bottom-left-radius:20px;
 `
 
 
@@ -115,8 +113,13 @@ export const Form = styled.form`
     justify-content: center;
 
 `
-export const SelectResp = styled.select`
-    width: 20%;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+export const ButtonResp = styled.button`
+    height: 29px;
+    width: 10%;
+    margin: 1px 0 0 0;
+    border: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: #febd69;
+    background: "#febd69";
 `

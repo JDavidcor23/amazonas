@@ -21,6 +21,7 @@ export const BottonInput = styled.button`
     border-radius: 5px;
     background: #f0c14b;
     padding: 5px;
+    cursor:pointer;
     border-color:  #a88734 #9c7e31 #846a29;
 `
 export const LinearDiv = styled.div`

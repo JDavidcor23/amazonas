@@ -4,24 +4,29 @@ import {
   Moneda,
 } from "../../Components/CardsProducts/StyledCardsProducts";
 import { products } from "../../data/products";
-import { ContainerItems, ButtonProcesar, ContainerP } from "./StyledItemsCart";
+import {
+  ContainerItems,
+  ButtonProcesar,
+  ContainerP,
+  ContainerItemsP,
+  ButtonDelete,
+  ImgCart,
+} from "./StyledItemsCart";
 
 const ItemsCart = () => {
   return (
     <ContainerItems>
       <ContainerP>
         <h2>Carrito</h2>
-        <h4
-          style={{ fontSize: "1.5rem", marginTop: "10px", textAlign: "center" }}
-        >
+        <h4 style={{ marginTop: "10px" }}>
           Subtotal(1 productos):<strong>US$299</strong>
         </h4>
         <ButtonProcesar>Procesar pago</ButtonProcesar>
       </ContainerP>
       <div>
         {products.map((pro) => (
-          <div key={pro.id}>
-            <img src={pro.img1} alt="" />
+          <ContainerItemsP key={pro.id}>
+            <ImgCart src={pro.img1} alt="" />
             <div>
               <h2>{pro.name}</h2>
               <ContainerPrice>
@@ -31,9 +36,9 @@ const ItemsCart = () => {
                 </p>
               </ContainerPrice>
               <p>{pro.about}</p>
-              <button>Eliminar</button>
+              <ButtonDelete>Eliminar</ButtonDelete>
             </div>
-          </div>
+          </ContainerItemsP>
         ))}
       </div>
     </ContainerItems>

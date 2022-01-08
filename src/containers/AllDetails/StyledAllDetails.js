@@ -7,7 +7,7 @@ export const Conatiner = styled.div`
     align-items: center;
 `
 export const ButtoYellow = styled.button`
-    margin: 0 20px 0 0;
+    margin: 10px  20px 0 0;
     padding: 10px;
     border: none;
     cursor:pointer;
@@ -17,6 +17,7 @@ export const ButtoYellow = styled.button`
 export const ButtoOrange = styled.button`
     padding: 10px;
     border: none;
+    margin-top: 10px;
     cursor:pointer;
     background: #ffa41c;
     border-radius: 20px;

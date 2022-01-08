@@ -16,4 +16,5 @@ export const Ir = styled.button`
     padding: 5px;
     border: 1px solid #a8a3a3;
     width: 310px;
+    cursor:pointer;
 `

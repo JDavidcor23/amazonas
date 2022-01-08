@@ -5,7 +5,7 @@ export const ConatinerMobile = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    @media screen and (min-width: 655px) {
+    @media screen and (min-width: 751px) {
         display: none;
     }
 `
