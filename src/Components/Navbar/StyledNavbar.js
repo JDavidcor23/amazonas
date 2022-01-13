@@ -82,6 +82,8 @@ export const Button = styled.button`
     `
 export const InputSearch = styled.input`
     height: 30px;
+    padding: 10px;
+    font-size:1.2rem;
     border-top-left-radius:20px;
     border-bottom-left-radius:20px;
 `
@@ -114,7 +116,7 @@ export const Form = styled.form`
 
 `
 export const ButtonResp = styled.button`
-    height: 29px;
+    height: 32px;
     width: 10%;
     margin: 1px 0 0 0;
     border: none;
@@ -122,4 +124,9 @@ export const ButtonResp = styled.button`
     border-bottom-right-radius: 10px;
     background: #febd69;
     background: "#febd69";
+`
+export const LiLogin = styled.li`
+    list-style: none;
+    display: flex;
+    flex-direction:column;
 `

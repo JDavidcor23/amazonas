@@ -5,6 +5,7 @@ import { DivLinearNew, H5, Ir } from "./StyledLogin.js";
 import { useDispatch } from "react-redux";
 import {useForm } from '../../hooks/useForm';
 import { loginGoogle, loginEmailPassword } from "../../actions/actionLogin";
+
 const Login = () => {
   const dispatch = useDispatch()
   const [ values, handleInputChange ] = useForm({
@@ -41,6 +42,7 @@ const handleLogin = (e) => {
         placeholder="Enter email"
         name="email"
         value={email}
+        multiple
         onChange={handleInputChange}
         />
         <label htmlFor="" style={{ fontWeight: "bold" }}>
@@ -56,9 +58,9 @@ const handleLogin = (e) => {
         type="submit">Continuar</BottonInput>
 
         <BottonInput 
-        style={{ margin: "20px 0" }}
+        style={{ margin: "20px 0", background:"white", borderColor:"black"}}
         onClick={handleGoogle}
-        >Iniciar con Google</BottonInput>
+        ><img src="https://img.icons8.com/color/16/000000/google-logo.png" alt=""/>Iniciar con Google</BottonInput>
       </Form>
       <div style={{ display: "flex" }}>
         <DivLinearNew></DivLinearNew>

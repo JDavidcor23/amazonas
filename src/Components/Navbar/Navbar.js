@@ -15,37 +15,33 @@ import {
   LiResp,
   Form,
   ButtonResp,
+  // LiLogin,
 } from "./StyledNavbar";
-import { getAuth,onAuthStateChanged } from "firebase/auth";
-import { useNavigate } from 'react-router-dom'
-import { useDispatch } from 'react-redux';
-import { logout } from '../../actions/actionLogin';
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logout } from "../../actions/actionLogin";
 const Navbar = () => {
-
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
   const handleLogout = () => {
-      dispatch(logout())
-      navigate("/login")
-  }
+    dispatch(logout());
+    navigate("/login");
+  };
 
-
-  const [isLoggedIn, setIsLoggedIn] = React.useState(false)
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
   React.useEffect(() => {
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
-        if(user?.uid){
-         setIsLoggedIn(true)
-        }
-        else{
-         setIsLoggedIn(false)
-        }
-    })
-
- 
-  }, [setIsLoggedIn])
+      if (user?.uid) {
+        setIsLoggedIn(true);
+      } else {
+        setIsLoggedIn(false);
+      }
+    });
+  }, [setIsLoggedIn]);
   return (
     <Nav>
       <Ul>
@@ -72,15 +68,17 @@ const Navbar = () => {
               <img
                 src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1640461930/amazzonas/vwlwbedkqoyzpt2ht8sr.png"
                 alt=""
-                style={{ height: "20px", margin:"4px 0 0 0" }}
+                style={{ height: "20px", margin: "4px 0 0 0" }}
               />
             </Button>
           </form>
         </LiInput>
-        <Link to="/login" style={{textDecoration:"none", color:"white"}}>
-          {isLoggedIn ?
-          <button onClick={() => handleLogout()}>Logout</button>
-          :<Li>Iniciar seción</Li>}
+        <Link to="/login" style={{ textDecoration: "none", color: "white" }}>
+          {isLoggedIn ? (
+            <button onClick={() => handleLogout()}>Cerrar secion</button>
+          ) : (
+            <Li>Iniciar seción</Li>
+          )}
         </Link>
         <Link to="/shopping_cart">
           <LiCarrito>
@@ -94,16 +92,21 @@ const Navbar = () => {
       </Ul>
       <LiResp>
         <Form action="">
-          <input type="text" style={{ 
-            width: "80%",
-            borderTopLeftRadius: "10px",
-            borderBottomLeftRadius: "10px", }} />
-          <ButtonResp
-          >
+          <input
+            type="text"
+            style={{
+              width: "80%",
+              borderTopLeftRadius: "10px",
+              borderBottomLeftRadius: "10px",
+              padding: "2px",
+              fontSize: "1.1rem",
+            }}
+          />
+          <ButtonResp>
             <img
               src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1640461930/amazzonas/vwlwbedkqoyzpt2ht8sr.png"
               alt=""
-              style={{ height: "20px", margin:"4px 0 0 0" }}
+              style={{ height: "20px", margin: "4px 0 0 0" }}
             />
           </ButtonResp>
         </Form>
