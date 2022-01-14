@@ -16,7 +16,7 @@ export const registerProductsReducer = (state = initialState, action) => {
             }
         case typesproducst.deleteproduct:
             return {
-                products: state.employees.filter(emp => emp.name !== action.payload)
+                products: state.products.filter(pro => pro.name !== action.payload)
             }
         default:
             return state;

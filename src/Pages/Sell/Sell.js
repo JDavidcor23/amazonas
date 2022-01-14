@@ -11,7 +11,7 @@ const Sell = () => {
     const dispatch = useDispatch();
     React.useEffect(() => {
         dispatch(listarProductAsincrono(id))
-      }, [])
+      }, [dispatch, id])
     return (
         <div>
             <Navbar/>

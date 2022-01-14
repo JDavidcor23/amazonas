@@ -7,15 +7,20 @@ import Register from '../Pages/Register/Register';
 import DashboardRoutes from './DashboardRoutes';
 import { PrivateRoute } from "./PrivateRoute";
 import { PublicRoute } from "./PublicRoute";
+import { useDispatch } from "react-redux";
 import { getAuth,onAuthStateChanged } from "firebase/auth";
+import ImageSelect from '../Components/ImageSelect/ImageSelect';
+import { loginSincrono } from '../actions/actionLogin';
 function AppRouter() {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false)
-
+  const dispatch = useDispatch();
+  
   React.useEffect(() => {
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
         if(user?.uid){
          setIsLoggedIn(true)
+         dispatch(loginSincrono(user.uid,user.displayName))
         }
         else{
          setIsLoggedIn(false)
@@ -23,12 +28,14 @@ function AppRouter() {
     })
 
  
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [setIsLoggedIn])
 
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home/>}/>
+        <Route path="/image" element={<ImageSelect/>}/>
         <Route path="/login" element={
         <PublicRoute isAuthenticated={isLoggedIn}>
             <Login/> 

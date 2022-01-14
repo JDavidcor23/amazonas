@@ -9,6 +9,7 @@ import { registroProductsAsincrono } from "../../actions/actionProducts";
 const FormSell = () => {
 
   const { id } = useSelector((store) => store.login);
+  const { products } = useSelector((store) => store.products);
   const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
@@ -21,7 +22,12 @@ const FormSell = () => {
       country: "",
     },
     onSubmit: (data) => {
-      dispatch(registroProductsAsincrono(data));
+      const productisAlready = products.some(pro => pro.name === data.name)
+      if(productisAlready){
+        alert("El produtco ya existe")
+      }else{
+        dispatch(registroProductsAsincrono(data));
+      }
     },
   });
   const handlePictureClick = () => {
@@ -86,6 +92,7 @@ const FormSell = () => {
           >
             <option value="DEFAULT" disabled>Selecciona</option>
             <option value="Tegnologia">Tegnologia</option>
+            <option value="Tegnologia">Electrodomesticos</option>
             <option value="Animales">Animales</option>
             <option value="Gaming">Gaming</option>
             <option value="Bebés">Bebés</option>

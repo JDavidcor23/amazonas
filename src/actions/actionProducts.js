@@ -1,6 +1,7 @@
 import {typesproducst} from '../types/types'
 import { db } from "../firebase/firebaseConfig";
-import { addDoc,collection,getDocs,query,where} from "@firebase/firestore";
+import { addDoc,collection,getDocs,query,where, deleteDoc, doc} from "@firebase/firestore";
+
 //  async
 export const registroProductsAsincrono =(product)=>{
     return(dispatch)=>{
@@ -23,10 +24,22 @@ export const listarProductAsincrono = (id) =>{
             productList.push({
                 ...doc.data()
             })
-        });
+        }); 
         dispatch(listarProductsSincrono(productList))
     }
 }
+
+export const eliminarProductsAsincrono = (name, id) =>{
+    return async(dispatch)=>{
+        const q = query(collection(db, "products"), where("uid", "==", id), where("name", "==", name));
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((docu) =>{
+            deleteDoc(doc(db, 'products', docu.id))
+        })
+        dispatch(eliminarProductsSincrono(name))
+    }
+}
+
 
 //sincrono
 export const eliminarProductsSincrono = (name) =>{
