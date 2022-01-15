@@ -7,13 +7,13 @@ import {
 import {ButtoYellow, ButtoOrange} from '../../containers/AllDetails/StyledAllDetails'
 
 const MobileDetail = ({product}) => {
-    const [img, setImg] = React.useState(product.img1)
-    const ChangeImg = (img) =>{
-        setImg(img)
-    }
+     const [img, setImg] = React.useState(product.url[0])
+     const ChangeImg = (img) =>{
+         setImg(img)
+     }
     return (
         <ConatinerMobile>
-            <h2>{product.name}</h2>
+            <h2 style={{width:"90%", textAlign:"center", marginTop:"10px"}}>{product.name}</h2>
             <img
                 src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1640918571/amazzonas/wgxk71q9xwrd1ifoldfj.png"
                 alt="estrellas"
@@ -22,23 +22,23 @@ const MobileDetail = ({product}) => {
             <img src={img} alt="" style={{marginTop:"10px", width:"70%"}}/>
             <div style={{ width: "80%", display: "flex", justifyContent: "center", marginTop:"10px" }}>
                 <img
-                src={product.img1}
-                onMouseOver={()=>ChangeImg(product.img1)}
-                alt=""
+                onMouseOver={()=>ChangeImg(product.url[0])}
+                src={product.url[0]}
+                alt={product.name}
                 width="80px"
                 style={{ margin: "0 10px" }}
                 />
                 <img
-                src={product.img2}
-                onMouseOver={()=>ChangeImg(product.img2)}
-                alt=""
+                onMouseOver={()=>ChangeImg(product.url[1])}
+                src={product.url[1]}
+                alt={product.name}
                 width="80px"
                 style={{ margin: "0 10px" }}
                 />
                 <img
-                src={product.img3}
-                onMouseOver={()=>ChangeImg(product.img3)}
-                alt=""
+                onMouseOver={()=>ChangeImg(product.url[2])}
+                src={product.url[2]}
+                alt={product.name}
                 width="80px"
                 style={{ margin: "0 10px" }}
                 />
@@ -70,7 +70,7 @@ const MobileDetail = ({product}) => {
                 </div>
             </form>
             <h3>Descripción</h3>
-            <p style={{ width: "90%" }}>{product.about}</p>
+            <p style={{ width: "90%" }}>{product.description}</p> 
         </ConatinerMobile>
     );
 };

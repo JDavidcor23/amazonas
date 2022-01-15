@@ -6,14 +6,14 @@ import {
     ContainerPrice,
     Moneda,
   } from "../../Components/CardsProducts/StyledCardsProducts";
-const DesktopDetail = ({product}) => {
-    const [img, setImg] = React.useState(product.img1)
-    const ChangeImg = (img) =>{
-        setImg(img)
-    }
+  const DesktopDetail = ({product}) => {
+       const [img, setImg] = React.useState(product.url[0])
+       const ChangeImg = (img) =>{
+           setImg(img)
+       }
     return (
     <DesktopDiv>
-        <Images>
+         <Images>
             <ReactImageMagnify style={{zIndex:"1"}} {...{
             smallImage: {
                 alt: 'Wristwatch by Ted Baker London',
@@ -31,22 +31,22 @@ const DesktopDetail = ({product}) => {
             <p style={{textAling: "center", fontSize:"0.9rem", width:"90%", marginTop:"10px"}}>Pasa el mouse encima de la imagen para aplicar zoom</p>
             <ContainerImages>
                 <ImgSelect
-                onMouseOver={()=>ChangeImg(product.img1)}
-                src={product.img1}
-                alt=""
+                onMouseOver={()=>ChangeImg(product.url[0])}
+                src={product.url[0]}
+                alt={product.name}
                 />
                 <ImgSelect
-                onMouseOver={()=>ChangeImg(product.img2)}
-                src={product.img2}
-                alt=""
+                onMouseOver={()=>ChangeImg(product.url[1])}
+                src={product.url[1]}
+                alt={product.name}
                 />
                 <ImgSelect
-                onMouseOver={()=>ChangeImg(product.img3)}
-                src={product.img3}
-                alt=""
+                onMouseOver={()=>ChangeImg(product.url[2])}
+                src={product.url[2]}
+                alt={product.name}
                 />
             </ContainerImages>
-        </Images>
+        </Images> 
         <div>
         <h2>{product.name}</h2>
         <img
@@ -81,8 +81,8 @@ const DesktopDetail = ({product}) => {
             </div>
         </form>
         <h3>Descripción</h3>
-        <p style={{ width: "90%" }}>{product.about}</p>
-        </div>
+        <p style={{ width: "90%" }}>{product.description}</p>
+        </div>  
     </DesktopDiv>
     );
 };

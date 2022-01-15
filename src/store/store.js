@@ -4,6 +4,8 @@ import { loginReducer } from '../reducers/loginReducer';
 import { registerReducer } from '../reducers/registerReducer';
 import { registerProductsReducer } from '../reducers/productsReducers';
 import {updateReducer} from '../reducers/updateReducer'
+import { productListReducer } from '../reducers/productListReducer';
+import { shopingReducers } from '../reducers/shopingReducers';
 
 const composeEnhancers = (typeof window !== 'undefined' && 
 window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
@@ -12,7 +14,9 @@ const reducers = combineReducers({
     login: loginReducer,
     register: registerReducer,
     products:registerProductsReducer,
-    update:updateReducer
+    update:updateReducer,
+    category:productListReducer,
+    cart: shopingReducers,
 
 })
 

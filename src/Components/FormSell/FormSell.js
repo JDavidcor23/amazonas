@@ -28,7 +28,8 @@ const FormSell = () => {
       if(productisAlready){
         alert("El produtco ya existe")
       }else{
-        dispatch(registroProductsAsincrono(data));
+         dispatch(registroProductsAsincrono(data));
+
       }
     },
   });
@@ -76,7 +77,7 @@ const FormSell = () => {
           type="text"
           className="form-control"
           name="name"
-          value={update.state ? products[update.idPorduct].name : ""}
+          // value={update.state ? products[update.idPorduct].name : ""}
           required
           onChange={formik.handleChange}
         />
@@ -98,18 +99,18 @@ const FormSell = () => {
             onChange={formik.handleChange}
           >
             <option value="DEFAULT" disabled>Selecciona</option>
-            <option value="Tegnologia">Tegnologia</option>
-            <option value="Tegnologia">Electrodomesticos</option>
-            <option value="Animales">Animales</option>
-            <option value="Gaming">Gaming</option>
-            <option value="Bebés">Bebés</option>
-            <option value="Cocina">Cocina y Hogar</option>
+            <option value="Electrodomesticos">Electrodomesticos</option>
+            <option value="Arcticulos para bebés">Arcticulos para bebés</option>
+            <option value="Hogar y Cocina">Hogar y Cocina</option>
             <option value="Juguetes">Juguetes</option>
             <option value="Ropa">Ropa</option>
+            <option value="Animales">Animales</option>
+            <option value="Gaming">Gaming</option>
+            {/* <option value="Ropa">Ropa</option>
             <option value="Muebles">Muebles</option>
             <option value="Libros">Libros</option>
             <option value="Libros">Libros</option>
-            <option value="Deportes">Deportes</option>
+            <option value="Deportes">Deportes</option> */}
           </select>
         </div>
         <label htmlFor="">Selecciona 3 imagenes</label>
@@ -122,7 +123,7 @@ const FormSell = () => {
           style={{ display: "none" }}
           onChange={handleFileChanged}
           multiple
-          required
+          // required
         />
 
         <button

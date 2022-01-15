@@ -1,16 +1,13 @@
 import React from "react";
 import DesktopDetail from "../../Components/DesktopDetail/DesktopDetail";
 import MobileDetail from "../../Components/MobileDetail/MobileDetail";
-import { products } from "../../data/products";
 import { Conatiner } from "./StyledAllDetails";
 const AllDetails = () => {
-  const id = localStorage.getItem("detailId");
-  const product = products.find((p) => p.id === Number(id));
-
+  const productDetail = JSON.parse(localStorage.getItem("detailId"))
   return (
     <Conatiner>
-      <MobileDetail product={product} />
-      <DesktopDetail product={product} />
+       <MobileDetail product={productDetail} />
+      <DesktopDetail product={productDetail} />
     </Conatiner>
   );
 };
