@@ -9,5 +9,9 @@
 export const typesproducst = {
     registerproduct: 'registerproduct',
     listproduct: 'listproduct',
-    deleteproduct: 'deleteproduct'
+    deleteproduct: 'deleteproduct',
+}
+export const updateProdutc = {
+    updatefalse: "updatefalse",
+    updatetrue: "updatetrue"
 }

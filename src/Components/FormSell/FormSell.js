@@ -10,18 +10,20 @@ const FormSell = () => {
 
   const { id } = useSelector((store) => store.login);
   const { products } = useSelector((store) => store.products);
+  const { update } = useSelector((store) => store.update);
   const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
       uid: id,
       url: "",
-      name: "",
+      name: update.state ? products[update.idPorduct].name : "",
       description: "",
       category: "",
       city: "",
       country: "",
     },
     onSubmit: (data) => {
+      
       const productisAlready = products.some(pro => pro.name === data.name)
       if(productisAlready){
         alert("El produtco ya existe")
@@ -33,17 +35,20 @@ const FormSell = () => {
   const handlePictureClick = () => {
     document.querySelector("#fileSelector").click();
   };
-
+  
   const handleFileChanged = (e) => {
-    const file = e.target.files[0];
-    fileUpload(file)
-    .then((response) => {
-        formik.values.url = response;
-        console.log(response);
+    const url = []
+    for(let i = 0; i < 3; i++){
+      fileUpload(e.target.files[i])
+      .then((response) => {
+        url.push(response)
+        console.log(url);
       })
       .catch((error) => {
         console.log(error.message);
       });
+    }
+    formik.values.url = url;
   };
   return (
     <ContainerFormSell>
@@ -55,6 +60,7 @@ const FormSell = () => {
           className="form-control"
           name="country"
           required
+          // value={formik.values.country}
           onChange={formik.handleChange}
         />
         <label htmlFor="">Ciudad</label>
@@ -70,6 +76,7 @@ const FormSell = () => {
           type="text"
           className="form-control"
           name="name"
+          value={update.state ? products[update.idPorduct].name : ""}
           required
           onChange={formik.handleChange}
         />
@@ -114,6 +121,7 @@ const FormSell = () => {
           name="url"
           style={{ display: "none" }}
           onChange={handleFileChanged}
+          multiple
           required
         />
 
@@ -136,7 +144,6 @@ const FormSell = () => {
           Enviar
         </BottonInput>
       </SellForm>
-        {/* <button onClick={()=>dispatch(listarProductAsincrono)}>ver</button> */}
     </ContainerFormSell>
   );
 };

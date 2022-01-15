@@ -39,8 +39,6 @@ export const eliminarProductsAsincrono = (name, id) =>{
         dispatch(eliminarProductsSincrono(name))
     }
 }
-
-
 //sincrono
 export const eliminarProductsSincrono = (name) =>{
     return{
