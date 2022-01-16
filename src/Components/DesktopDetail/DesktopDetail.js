@@ -1,6 +1,8 @@
 import React from 'react';
 import {  DesktopDiv, Images, ImgSelect, ContainerImages} from "./StyledDesktopDetail";
+import { useDispatch } from 'react-redux';
  import ReactImageMagnify from 'react-image-magnify';
+ import {setItemCart} from '../../actions/actionShopingCart'
 import {ButtoYellow, ButtoOrange} from '../../containers/AllDetails/StyledAllDetails'
 import {
     ContainerPrice,
@@ -11,6 +13,7 @@ import {
        const ChangeImg = (img) =>{
            setImg(img)
        }
+       const dispatch = useDispatch()
     return (
     <DesktopDiv>
          <Images>
@@ -76,10 +79,10 @@ import {
             <option value="3">3</option>
             </select>
             <div style={{ margin: "20px 0 20px 0" }}>
-            <ButtoYellow>Agregar al Carrito</ButtoYellow>
-            <ButtoOrange>Comprar ahora</ButtoOrange>
             </div>
         </form>
+            <ButtoYellow onClick={()=>dispatch(setItemCart(product))}>Agregar al Carrito</ButtoYellow>
+            <ButtoOrange>Comprar ahora</ButtoOrange>
         <h3>Descripción</h3>
         <p style={{ width: "90%" }}>{product.description}</p>
         </div>  

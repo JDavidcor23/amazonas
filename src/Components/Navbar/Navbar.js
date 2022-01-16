@@ -19,11 +19,11 @@ import {
 } from "./StyledNavbar";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../actions/actionLogin";
 const Navbar = () => {
   const navigate = useNavigate();
-
+  const {items} = useSelector(state => state.cart)
   const dispatch = useDispatch();
 
   const handleLogout = () => {
@@ -86,7 +86,7 @@ const Navbar = () => {
               src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1640461930/amazzonas/qxgnae7wozfqx6i01vxy.png"
               alt=""
             />
-            <Span>0</Span>
+            <Span>{items.length}</Span>
           </LiCarrito>
         </Link>
       </Ul>

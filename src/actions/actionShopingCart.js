@@ -1,9 +1,9 @@
 import {addShopping} from '../types/types'
 
 
-export const productListSincrono = (item) =>{
+export const setItemCart = (item) =>{
     return{
-        type: addShopping.watchproduct,
+        type: addShopping.add_to_cart,
         payload: item
     }
 }

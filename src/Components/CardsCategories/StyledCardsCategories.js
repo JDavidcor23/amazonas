@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
+
 import styled from "styled-components";
 
-export const LinkCards = styled(Link)`
+export const LinkCards = styled.div`
     display: flex;
     text-align: center;
     flex-direction: column-reverse;
@@ -12,9 +12,6 @@ export const LinkCards = styled(Link)`
     height: auto;
     padding: 10px;
     color: #f08804;
-    &:hover{
-        color:#f08804;
-    }
      @media screen and (max-width: 600px) {
         width: 200px;
     }  
