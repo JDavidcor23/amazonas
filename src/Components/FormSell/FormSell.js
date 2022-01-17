@@ -10,13 +10,12 @@ const FormSell = () => {
 
   const { id } = useSelector((store) => store.login);
   const { products } = useSelector((store) => store.products);
-  const { update } = useSelector((store) => store.update);
   const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
       uid: id,
       url: "",
-      name: update.state ? products[update.idPorduct].name : "",
+      name: "",
       description: "",
       category: "",
       city: "",
@@ -61,7 +60,6 @@ const FormSell = () => {
           className="form-control"
           name="country"
           required
-          // value={formik.values.country}
           onChange={formik.handleChange}
         />
         <label htmlFor="">Ciudad</label>
@@ -77,7 +75,6 @@ const FormSell = () => {
           type="text"
           className="form-control"
           name="name"
-          // value={update.state ? products[update.idPorduct].name : ""}
           required
           onChange={formik.handleChange}
         />
@@ -100,17 +97,12 @@ const FormSell = () => {
           >
             <option value="DEFAULT" disabled>Selecciona</option>
             <option value="Electrodomesticos">Electrodomesticos</option>
-            <option value="Arcticulos para bebés">Arcticulos para bebés</option>
+            <option value="Muebles">Muebles</option>
             <option value="Hogar y Cocina">Hogar y Cocina</option>
             <option value="Juguetes">Juguetes</option>
             <option value="Ropa">Ropa</option>
             <option value="Animales">Animales</option>
             <option value="Gaming">Gaming</option>
-            {/* <option value="Ropa">Ropa</option>
-            <option value="Muebles">Muebles</option>
-            <option value="Libros">Libros</option>
-            <option value="Libros">Libros</option>
-            <option value="Deportes">Deportes</option> */}
           </select>
         </div>
         <label htmlFor="">Selecciona 3 imagenes</label>

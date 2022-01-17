@@ -1,17 +1,17 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import {productListASincrono} from '../../actions/actionProductList'
+import {productListFilterASincrono} from '../../actions/actionProductList'
 import {LinkCards} from './StyledCardsCategories'
 
 const CardsCategories = ({ cat }) => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const sendCategory = (category)=>{
-    dispatch(productListASincrono(category))
-    setTimeout(()=>{
-      navigate("/products")
-    },1000)
+    dispatch(productListFilterASincrono("", false, category))
+     setTimeout(()=>{
+       navigate("/products")
+     },1000)
   } 
   return (
     <LinkCards onClick={()=>sendCategory(cat.title)} style={{cursor:"pointer"}}>

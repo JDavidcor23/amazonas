@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-export const CardsTops = styled(Link)`
+export const CardsTops = styled.div`
     flex: 0 0 auto;
     display:flex;
     width: 200px;

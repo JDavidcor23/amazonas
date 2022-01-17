@@ -1,18 +1,31 @@
 import {productList} from '../types/types';
 import { db } from "../firebase/firebaseConfig";
-import { collection,getDocs,query,where} from "@firebase/firestore";
+import { collection,getDocs} from "@firebase/firestore";
 
-export const productListASincrono = (category) =>{
+export const productListFilterASincrono = (name, search=false, category="") =>{
     return async(dispatch)=>{
-        const q = query(collection(db, "products"), where("category", "==", category));
         const product=[];
-        const querySnapshot = await getDocs(q);
+        const querySnapshot =  await getDocs(collection(db,"products"))
         querySnapshot.forEach((doc) => {
             product.push({
-                ...doc.data()
+                id :doc.id,
+                uid :doc.data().uid,
+                description :doc.data().description,
+                category :doc.data().category,
+                price :doc.data().price,
+                url :doc.data().url,
+                country :doc.data().country,
+                city :doc.data().city,
+                name :doc.data().name,
             })
         }); 
-         dispatch(productListSincrono(product))
+         if(search){
+             let productSearchched = product.filter(pro => pro.name.toLowerCase().includes(name.search.toLowerCase()))
+              dispatch(productListSincrono(productSearchched))
+            }else{
+             let productSearchched = product.filter(pro => pro.category.toLowerCase().includes(category.toLowerCase()))
+              dispatch(productListSincrono(productSearchched))
+         }
     }
 }
 

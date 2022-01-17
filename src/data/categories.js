@@ -6,8 +6,8 @@ export const categorias = [
     },
     {
         id:2,
-        img: "https://res.cloudinary.com/dhu6ga6hl/image/upload/v1640636408/amazzonas/pxonlnexovret4eobcds.jpg",
-        title:"Arcticulos para bebés"
+        img: "https://res.cloudinary.com/dhu6ga6hl/image/upload/v1642350723/amazzonas/h5dwnqep4nmo2ms4am45.png",
+        title:"Muebles"
     },
     {
         id:3,
@@ -34,53 +34,39 @@ export const categorias = [
 
 export const topBestSellers =[
     {
-        id:1,
+        id:"FnG0UHgASE6NURqhmGgw",
         img:"https://res.cloudinary.com/dhu6ga6hl/image/upload/v1640652460/amazzonas/g4vrxarppfjrtrdksr0j.jpg",
-        link:""
     },
     {
-        id:2,
-        img:"https://res.cloudinary.com/dhu6ga6hl/image/upload/v1640652460/amazzonas/gvlrpf1f2oqiofanch3y.png",
-        link:""
+        id:"a2bqSJNca4fg2oIFjC6U",
+        img:"https://res.cloudinary.com/dhu6ga6hl/image/upload/v1642355748/products/szo8zgbhiu22jdyy0q8h.jpg",
     },
     {
-        id:3,
+        id:"y6HHXlfbHJEm9hP3V2gd",
         img:"https://res.cloudinary.com/dhu6ga6hl/image/upload/v1640652460/amazzonas/pai1ys15w7xb47b9r1mu.jpg",
-        link:""
     },
     {
-        id:4,
+        id:"H9iX4n4vo75xkFTdeYOb",
         img:"https://res.cloudinary.com/dhu6ga6hl/image/upload/v1640652460/amazzonas/ldkgw5ci35lcm43umi4q.jpg",
-        link:""
     },
     {
-        id:5,
+        id:"BAgOk0m0B45jz6r7yvC6",
         img:"https://res.cloudinary.com/dhu6ga6hl/image/upload/v1640652460/amazzonas/lfrfpl0mjnlkaltr7v0c.jpg",
-        link:""
     },
     {
-        id:6,
+        id:"zbYBkicc1ofyLmZ029ur",
         img:"https://res.cloudinary.com/dhu6ga6hl/image/upload/v1640652460/amazzonas/r8bddwojtuvawkeg96sb.jpg",
-        link:""
     },
     {
-        id:7,
-        img:"https://res.cloudinary.com/dhu6ga6hl/image/upload/v1640652459/amazzonas/wchdwrxv0lun4bmccekf.jpg",
-        link:""
+        id:"FNe597nkYgc5VcWVbgbf",
+        img:"https://res.cloudinary.com/dhu6ga6hl/image/upload/v1642351733/products/tulj6yb2yhg6bgxxyfru.jpg",
     },
     {
-        id:8,
-        img:"https://res.cloudinary.com/dhu6ga6hl/image/upload/v1640652459/amazzonas/b5xuajl7fmvsfdxvlklv.jpg",
-        link:""
+        id:"WNSFzkF6uD8oUgipocE4",
+        img:"https://res.cloudinary.com/dhu6ga6hl/image/upload/v1642356550/products/qtw4viui1sotz3phfvhk.jpg",
     },
     {
-        id:9,
-        img:"https://res.cloudinary.com/dhu6ga6hl/image/upload/v1640652459/amazzonas/pmsctlaqpkhf0vwheoi9.jpg",
-        link:""
-    },
-    {
-        id:10,
-        img:"https://res.cloudinary.com/dhu6ga6hl/image/upload/v1640652459/amazzonas/pmgoldazs8pkg4dxgtnt.jpg",
-        link:""
+        id:"7fMHAEMd0XlCQIBAEJtj",
+        img:"https://res.cloudinary.com/dhu6ga6hl/image/upload/v1642356825/products/xnvpjdskty3khyfbtlvh.jpg",
     },
 ]

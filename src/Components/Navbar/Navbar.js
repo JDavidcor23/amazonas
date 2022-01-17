@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   Nav,
   Ul,
   Li,
   Logo,
-  LiCarrito,
-  Carrito,
+  // LiCarrito,
+  // Carrito,
   Span,
   Button,
   LiInput,
@@ -21,16 +21,57 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../actions/actionLogin";
+import { productListFilterASincrono } from "../../actions/actionProductList";
+import { useFormik } from "formik";
 const Navbar = () => {
-  const navigate = useNavigate();
+  let url = '';
   const {items} = useSelector(state => state.cart)
-  const dispatch = useDispatch();
+  const {name} = useSelector(state => state.login)
+  const [ubicacion, setUbicacion] = useState('')
+  const sumTotal = () =>{
+    const reducer = (acumulador, currentValue) => acumulador + currentValue.quantity
+    const sum = items.reduce(reducer,0)
+    return sum
+  }
+  useEffect(() => {
+   getCoordenadas();
+  },)
 
+ const getCoordenadas = () => {
+    navigator.geolocation.getCurrentPosition(position => {
+     const { latitude, longitude } = position.coords;
+     url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + latitude + ',' + longitude + '&key=AIzaSyDvS3_rBwM7RJYjDOnPzquTpJVlskDs7nI';
+     getUbicacion(url);
+   });
+   
+ }
+
+ const getUbicacion = async(endpoint) => {
+   const resp = await fetch(endpoint);
+   const {results} = await resp.json();
+   setUbicacion(results[0].formatted_address)
+ }
+
+  const navigate = useNavigate();
+
+  const dispatch = useDispatch();
   const handleLogout = () => {
     dispatch(logout());
     navigate("/login");
   };
-
+  const formik = useFormik({
+    initialValues: {
+      search: "",
+      
+    },
+    onSubmit: (data) => {
+      dispatch(productListFilterASincrono(data, true))
+      setTimeout(()=>{
+        navigate("/products");
+      },1000)
+    }
+  });
+  const sumCirculo = sumTotal()
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
   React.useEffect(() => {
     const auth = getAuth();
@@ -59,12 +100,22 @@ const Navbar = () => {
             alt=""
             height="20px"
           />
-          <p>Elige tu dirección</p>
+          <p style={{width:"150px"}}>
+            {
+              ubicacion
+            }
+          </p>
+
         </Li>
-        <LiInput>
-          <form action="">
-            <InputSearch type="text" />
-            <Button>
+         <LiInput> 
+          <form action="" onSubmit={formik.handleSubmit}>
+            <InputSearch 
+            type="text" 
+            name="search"
+            onChange={formik.handleChange}
+            required
+            />
+            <Button type="submit">
               <img
                 src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1640461930/amazzonas/vwlwbedkqoyzpt2ht8sr.png"
                 alt=""
@@ -72,28 +123,40 @@ const Navbar = () => {
               />
             </Button>
           </form>
-        </LiInput>
-        <Link to="/login" style={{ textDecoration: "none", color: "white" }}>
+         </LiInput> 
           {isLoggedIn ? (
-            <button onClick={() => handleLogout()}>Cerrar secion</button>
+            <div className="dropdown">
+              <button className="btn btn-warning dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{position:"relative"}}>
+                  Hola {name}
+                <Span style={{background:"white", color:"#ffc107", padding:"5px",
+              borderRadius:"50%"}}>{sumTotal()}</Span>
+                </button>
+            <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
+              <button className="dropdown-item" type="button" onClick={() => handleLogout()}>Cerrar sesión</button>
+              <Link to="/shopping_cart" style={{textDecoration:"none"}}>
+              <button className="dropdown-item" type="button">Carrito de compras
+              {sumCirculo > 0 &&
+              <span style={{height:"15px", background:"#ffc107", width:"15px", borderRadius:"50%", display:"inline-block", margin:"0 0 0 5px"}}></span>
+              } 
+              </button>
+
+              </Link>
+            </div>
+          </div>
           ) : (
-            <Li>Iniciar seción</Li>
+            <Link to="/login" style={{textDecoration:"none", color:"white"}}>
+              <Li>Iniciar seción</Li>
+            </Link>
           )}
-        </Link>
         <Link to="/shopping_cart">
-          <LiCarrito>
-            <Carrito
-              src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1640461930/amazzonas/qxgnae7wozfqx6i01vxy.png"
-              alt=""
-            />
-            <Span>{items.length}</Span>
-          </LiCarrito>
         </Link>
       </Ul>
-      <LiResp>
-        <Form action="">
-          <input
-            type="text"
+       <LiResp>
+        <Form action="" onSubmit={formik.handleSubmit}>
+            <input 
+            type="text" 
+            name="search"
+            onChange={formik.handleChange}
             style={{
               width: "80%",
               borderTopLeftRadius: "10px",
@@ -110,7 +173,7 @@ const Navbar = () => {
             />
           </ButtonResp>
         </Form>
-      </LiResp>
+      </LiResp> 
     </Nav>
   );
 };

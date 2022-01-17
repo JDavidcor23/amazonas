@@ -3,7 +3,6 @@ import thunk from 'redux-thunk';
 import { loginReducer } from '../reducers/loginReducer';
 import { registerReducer } from '../reducers/registerReducer';
 import { registerProductsReducer } from '../reducers/productsReducers';
-import {updateReducer} from '../reducers/updateReducer'
 import { productListReducer } from '../reducers/productListReducer';
 import { shopingReducers } from '../reducers/shopingReducers';
 
@@ -14,7 +13,6 @@ const reducers = combineReducers({
     login: loginReducer,
     register: registerReducer,
     products:registerProductsReducer,
-    update:updateReducer,
     category:productListReducer,
     cart: shopingReducers,
 

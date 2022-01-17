@@ -9,10 +9,6 @@ export const typesproducst = {
     listproduct: 'listproduct',
     deleteproduct: 'deleteproduct',
 }
-export const updateProdutc = {
-    updatefalse: "updatefalse",
-    updatetrue: "updatetrue"
-}
 export const productList = {
     watchproduct:"watchproduct"
 }

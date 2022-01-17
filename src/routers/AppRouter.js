@@ -11,12 +11,14 @@ import { useDispatch } from "react-redux";
 import { getAuth,onAuthStateChanged } from "firebase/auth";
 import ImageSelect from '../Components/ImageSelect/ImageSelect';
 import { loginSincrono } from '../actions/actionLogin';
+import { productListFilterASincrono } from '../actions/actionProductList';
 function AppRouter() {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false)
   const dispatch = useDispatch();
   
   React.useEffect(() => {
     const auth = getAuth();
+    dispatch(productListFilterASincrono())
     onAuthStateChanged(auth, (user) => {
         if(user?.uid){
          setIsLoggedIn(true)
@@ -44,7 +46,6 @@ function AppRouter() {
         </PublicRoute>
         }/>
         <Route path="/products" element={<Products/>}/>
-
         <Route path="/*" element={
           <PrivateRoute isAuthenticated={isLoggedIn}>
               <DashboardRoutes/>

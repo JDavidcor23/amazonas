@@ -69,18 +69,6 @@ import {
             {product.price}
             </p>
         </ContainerPrice>
-        <form action="">
-            <select name="select" defaultValue={"DEFAULT"}>
-            <option value="DEFAULT" disabled>
-                Cant
-            </option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            </select>
-            <div style={{ margin: "20px 0 20px 0" }}>
-            </div>
-        </form>
             <ButtoYellow onClick={()=>dispatch(setItemCart(product))}>Agregar al Carrito</ButtoYellow>
             <ButtoOrange>Comprar ahora</ButtoOrange>
         <h3>Descripción</h3>

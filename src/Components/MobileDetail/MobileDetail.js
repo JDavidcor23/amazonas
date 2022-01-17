@@ -5,12 +5,16 @@ import {
     Moneda,
   } from "../../Components/CardsProducts/StyledCardsProducts";
 import {ButtoYellow, ButtoOrange} from '../../containers/AllDetails/StyledAllDetails'
+import { useDispatch } from 'react-redux';
+ import {setItemCart} from '../../actions/actionShopingCart'
 
 const MobileDetail = ({product}) => {
      const [img, setImg] = React.useState(product.url[0])
      const ChangeImg = (img) =>{
          setImg(img)
      }
+     const dispatch = useDispatch()
+
     return (
         <ConatinerMobile>
             <h2 style={{width:"90%", textAlign:"center", marginTop:"10px"}}>{product.name}</h2>
@@ -55,20 +59,8 @@ const MobileDetail = ({product}) => {
                 {product.price}
                 </p>
             </ContainerPrice>
-            <form action="">
-                <select name="select" defaultValue={"DEFAULT"}>
-                <option value="DEFAULT" disabled>
-                    Cant
-                </option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                </select>
-                <div style={{ margin: "20px 0 20px 0" }}>
-                <ButtoYellow>Agregar al Carrito</ButtoYellow>
+                <ButtoYellow onClick={()=>dispatch(setItemCart(product))}>Agregar al Carrito</ButtoYellow>
                 <ButtoOrange>Comprar ahora</ButtoOrange>
-                </div>
-            </form>
             <h3>Descripción</h3>
             <p style={{ width: "90%" }}>{product.description}</p> 
         </ConatinerMobile>

@@ -1,8 +1,11 @@
 import {typesproducst} from '../types/types'
 import { db } from "../firebase/firebaseConfig";
-import { addDoc,collection,getDocs,query,where, deleteDoc, doc} from "@firebase/firestore";
+import { addDoc,collection,getDocs,query,where, deleteDoc, doc, updateDoc} from "@firebase/firestore";
 
 //  async
+export const getProductForEdit = (id, newProduct) =>{
+    updateDoc(doc(db,"products", id),newProduct)
+}
 export const registroProductsAsincrono =(product)=>{
     return(dispatch)=>{
         addDoc(collection(db, "products"), product)
@@ -15,16 +18,24 @@ export const registroProductsAsincrono =(product)=>{
         })
     }
 }
-export const listarProductAsincrono = (id) =>{
+export const listarProductAsincrono = (uid) =>{
     return async(dispatch)=>{
-        const q = query(collection(db, "products"), where("uid", "==", id));
+        const q = query(collection(db, "products"), where("uid", "==", uid));
         const productList=[];
         const querySnapshot = await getDocs(q);
         querySnapshot.forEach((doc) => {
             productList.push({
-                ...doc.data()
-            })
-        }); 
+                id :doc.id,
+                uid :uid,
+                description :doc.data().description,
+                category :doc.data().category,
+                price :doc.data().price,
+                url :doc.data().url,
+                country :doc.data().country,
+                city :doc.data().city,
+                name :doc.data().name,
+            }); 
+        })
         dispatch(listarProductsSincrono(productList))
     }
 }
