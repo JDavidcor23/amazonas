@@ -4,7 +4,7 @@ import Footer from "../../Components/Footer/Footer";
 import AllDetails from "../../containers/AllDetails/AllDetails";
 const Detail = () => {
   return (
-    <div>
+    <div style={{position:"relative"}}>
       <Navbar />
       <AllDetails/>
       <Footer />

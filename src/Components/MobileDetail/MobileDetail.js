@@ -18,11 +18,6 @@ const MobileDetail = ({product}) => {
     return (
         <ConatinerMobile>
             <h2 style={{width:"90%", textAlign:"center", marginTop:"10px"}}>{product.name}</h2>
-            <img
-                src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1640918571/amazzonas/wgxk71q9xwrd1ifoldfj.png"
-                alt="estrellas"
-                width="20%"
-                />
             <img src={img} alt="" style={{marginTop:"10px", width:"70%"}}/>
             <div style={{ width: "80%", display: "flex", justifyContent: "center", marginTop:"10px" }}>
                 <img

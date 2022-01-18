@@ -1,6 +1,9 @@
 import styled from 'styled-components'
 
 export const FooterC = styled.footer`
+    position: absolute;
+    width: 100%;
+    bottom: 0; 
     align-items:center;
     justify-content: center;
     display:flex;

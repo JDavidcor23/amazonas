@@ -128,8 +128,9 @@ const Navbar = () => {
             <div className="dropdown">
               <button className="btn btn-warning dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{position:"relative"}}>
                   Hola {name}
+                  {sumCirculo > 0 &&
                 <Span style={{background:"white", color:"#ffc107", padding:"5px",
-              borderRadius:"50%"}}>{sumTotal()}</Span>
+              borderRadius:"50%"}}>{sumTotal()}</Span>}
                 </button>
             <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
               <button className="dropdown-item" type="button" onClick={() => handleLogout()}>Cerrar sesión</button>

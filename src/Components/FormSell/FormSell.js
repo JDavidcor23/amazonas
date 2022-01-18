@@ -1,4 +1,5 @@
 import React from "react";
+import Swal from 'sweetalert2'
 import { BottonInput } from "../../Pages/Register/StyledRegister";
 import { ContainerFormSell, SellForm } from "./StyledFormSell";
 import { fileUpload } from "../../helpers/FileUpload";
@@ -25,10 +26,19 @@ const FormSell = () => {
       
       const productisAlready = products.some(pro => pro.name === data.name)
       if(productisAlready){
-        alert("El produtco ya existe")
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'El producto ya está agregado',
+        })
       }else{
-         dispatch(registroProductsAsincrono(data));
-
+        dispatch(registroProductsAsincrono(data));
+        Swal.fire({
+          icon: 'success',
+          title: 'Producto Guardado exitosamente',
+          showConfirmButton: false,
+          timer: 1500
+        })
       }
     },
   });

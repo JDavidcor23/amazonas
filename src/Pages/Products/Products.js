@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 const Products = () => {
   const { productList } = useSelector((state) => state.category);
   return (
-    <div>
+    <div style={{position:"relative"}}>
       <Navbar />
       <Container>
         {productList.length < 1 ? (

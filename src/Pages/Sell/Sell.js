@@ -1,5 +1,4 @@
 import React from 'react';
-import Footer from '../../Components/Footer/Footer';
 import FormSell from '../../Components/FormSell/FormSell';
 import Navbar from '../../Components/Navbar/Navbar';
 import TableProducts from '../../Components/TableProducts/TableProducts';
@@ -17,7 +16,6 @@ const Sell = () => {
             <Navbar/>
             <FormSell/>
             <TableProducts/>
-            <Footer/>
         </div>
     );
 };

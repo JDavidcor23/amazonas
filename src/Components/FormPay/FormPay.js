@@ -14,7 +14,7 @@ const FormPay = () => {
           e.preventDefault();
       }
     return (
-        <div>
+        <div style={{margin:"0 0 20px 0"}}>
             {items.length === 0 ?
             <img
             style={{ height: "80vh" }}

@@ -5,7 +5,7 @@ export const ContainerFormSell = styled.div`
     justify-content:center;
     width:90%;
     margin:0 auto;
-    margin-top:20px;
+    margin:20px 0 20px 0;
     `
 export const SellForm = styled.form`
     display: flex;

@@ -6,7 +6,7 @@ import TopBestSellers from '../../Components/TopBestSellers/TopBestSellers'
 import CardsCategories from "../../Components/CardsCategories/CardsCategories";
 const Categories = () => {
   return (
-    <div>
+    <div style={{margin:"0 0 150px 0"}}>
       <h2 style={{textAlign: "center"}}>Top de categorias</h2>
       <ContainerCategorias>
         {categorias.map((cat) => (

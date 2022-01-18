@@ -1,10 +1,12 @@
 import styled from 'styled-components'
 
 export const Conatiner = styled.div`
+    /* margin:0 0 120px 0; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding:0 0 130px 0; 
 `
 export const ButtoYellow = styled.button`
     margin: 10px  20px 0 0;

@@ -1,4 +1,5 @@
 import React from 'react';
+import Swal from 'sweetalert2'
 import { BottonInput } from "../../Pages/Register/StyledRegister";
 import { ContainerFormSell, SellForm } from "../FormSell/StyledFormSell";
 import { fileUpload } from "../../helpers/FileUpload";
@@ -25,7 +26,12 @@ const FormEdit = () => {
         },
         onSubmit: (data) => {
           getProductForEdit(productSelected.id, data)
-          alert("Producto guardado con exito")
+          Swal.fire({
+            icon: 'success',
+            title: 'Producto Guardado exitosamente',
+            showConfirmButton: false,
+            timer: 1500
+          })
           setTimeout(()=>{
             navigate("/sell")
           }, 500)

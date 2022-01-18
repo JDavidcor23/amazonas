@@ -52,11 +52,6 @@ import {
         </Images> 
         <div>
         <h2>{product.name}</h2>
-        <img
-        src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1640918571/amazzonas/wgxk71q9xwrd1ifoldfj.png"
-        alt="estrellas"
-        width="20%"
-        />
         <ContainerPrice>
             <p
             style={{

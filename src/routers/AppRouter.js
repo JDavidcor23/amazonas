@@ -9,7 +9,6 @@ import { PrivateRoute } from "./PrivateRoute";
 import { PublicRoute } from "./PublicRoute";
 import { useDispatch } from "react-redux";
 import { getAuth,onAuthStateChanged } from "firebase/auth";
-import ImageSelect from '../Components/ImageSelect/ImageSelect';
 import { loginSincrono } from '../actions/actionLogin';
 import { productListFilterASincrono } from '../actions/actionProductList';
 function AppRouter() {
@@ -35,7 +34,6 @@ function AppRouter() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/image" element={<ImageSelect/>}/>
         <Route path="/login" element={
         <PublicRoute isAuthenticated={isLoggedIn}>
             <Login/> 

@@ -1,5 +1,6 @@
 import {types} from '../types/types';
 import {  getAuth, createUserWithEmailAndPassword, updateProfile  } from "firebase/auth";
+import { loginSincrono } from './actionLogin';
 export const registroEmailPasswordNombre = (email,password,name) => {
     return(dispatch) => {
         const auth = getAuth();
@@ -9,7 +10,7 @@ export const registroEmailPasswordNombre = (email,password,name) => {
            await updateProfile(auth.currentUser, {displayName: name})
 
            dispatch(registerSincrono(user.email,user.uid,user.displayName))
-            console.log(user);
+           dispatch(loginSincrono(user.uid,user.displayName))
         })
         .catch(e =>{
             console.log(e);
