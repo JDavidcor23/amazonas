@@ -1,5 +1,4 @@
 import React from 'react';
-import Footer from '../../Components/Footer/Footer';
 import FormEdit from '../../Components/FormEdit/FormEdit';
 import Navbar from '../../Components/Navbar/Navbar';
 
@@ -8,7 +7,6 @@ const Edit = () => {
         <div>
             <Navbar/>
             <FormEdit/>
-            <Footer/>
         </div>
     );
 };

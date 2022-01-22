@@ -16,11 +16,3 @@ export const ButtoYellow = styled.button`
     background: #ffd814;
     border-radius: 20px;
 `
-export const ButtoOrange = styled.button`
-    padding: 10px;
-    border: none;
-    margin-top: 10px;
-    cursor:pointer;
-    background: #ffa41c;
-    border-radius: 20px;
-`

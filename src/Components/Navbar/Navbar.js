@@ -5,8 +5,6 @@ import {
   Ul,
   Li,
   Logo,
-  // LiCarrito,
-  // Carrito,
   Span,
   Button,
   LiInput,
@@ -15,7 +13,6 @@ import {
   LiResp,
   Form,
   ButtonResp,
-  // LiLogin,
 } from "./StyledNavbar";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
@@ -66,9 +63,9 @@ const Navbar = () => {
     },
     onSubmit: (data) => {
       dispatch(productListFilterASincrono(data, true))
-      setTimeout(()=>{
-        navigate("/products");
-      },1000)
+       setTimeout(()=>{
+         navigate("/products");
+       },1000)
     }
   });
   const sumCirculo = sumTotal()
@@ -86,7 +83,8 @@ const Navbar = () => {
   return (
     <Nav>
       <Ul>
-        <Li>
+        {/* <DivResp> */}
+          <Li>
           <Link to="/">
             <Logo
               src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1640477276/amazzonas/rg1jkqcdlfez0tzh0iej.png"
@@ -119,11 +117,12 @@ const Navbar = () => {
               <img
                 src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1640461930/amazzonas/vwlwbedkqoyzpt2ht8sr.png"
                 alt=""
-                style={{ height: "20px", margin: "4px 0 0 0" }}
+                style={{ height: "20px"}}
               />
             </Button>
           </form>
          </LiInput> 
+        {/* </DivResp> */}
           {isLoggedIn ? (
             <div className="dropdown">
               <button className="btn btn-warning dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{position:"relative"}}>

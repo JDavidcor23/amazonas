@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Swal from 'sweetalert2'
 import { useForm } from '../../hooks/useForm';
 import { useDispatch } from "react-redux";
 import {registroEmailPasswordNombre} from '../../actions/actionRegister';
@@ -17,7 +18,15 @@ const Register = () => {
 
   const handleRegistro = (e) => {
     e.preventDefault();
-    dispatch(registroEmailPasswordNombre(email,pass1,name))
+    if(pass1 !== pass2){
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Las contraseñas no coinciden',
+      })
+    }else{
+      dispatch(registroEmailPasswordNombre(email,pass1,name))
+    }
 }
   return (
     <Container onSubmit={handleRegistro}>

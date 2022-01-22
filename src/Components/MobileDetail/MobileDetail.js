@@ -4,16 +4,16 @@ import {
     ContainerPrice,
     Moneda,
   } from "../../Components/CardsProducts/StyledCardsProducts";
-import {ButtoYellow, ButtoOrange} from '../../containers/AllDetails/StyledAllDetails'
+import {ButtoYellow} from '../../containers/AllDetails/StyledAllDetails'
 import { useDispatch } from 'react-redux';
  import {setItemCart} from '../../actions/actionShopingCart'
 
 const MobileDetail = ({product}) => {
-     const [img, setImg] = React.useState(product.url[0])
-     const ChangeImg = (img) =>{
-         setImg(img)
-     }
-     const dispatch = useDispatch()
+    const [img, setImg] = React.useState(product.url[0])
+    const ChangeImg = (img) =>{
+        setImg(img)
+    }
+    const dispatch = useDispatch()
 
     return (
         <ConatinerMobile>
@@ -55,7 +55,6 @@ const MobileDetail = ({product}) => {
                 </p>
             </ContainerPrice>
                 <ButtoYellow onClick={()=>dispatch(setItemCart(product))}>Agregar al Carrito</ButtoYellow>
-                <ButtoOrange>Comprar ahora</ButtoOrange>
             <h3>Descripción</h3>
             <p style={{ width: "90%" }}>{product.description}</p> 
         </ConatinerMobile>

@@ -1,18 +1,19 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { CardsTops } from "./StyledTopBestSellers";
-
+import { db } from "../../firebase/firebaseConfig";
+import {  doc, getDoc} from "@firebase/firestore";
 const TopBestSellers = ({ sellers }) => {
 
-  const {productList} = useSelector(state => state.category)
   const navigate = useNavigate()
-  const guardarLocalStorage = (product) =>{
-    let productID =productList.find(pro => pro.id === product)
-     localStorage.setItem("detailId", JSON.stringify(productID))
-     setTimeout(()=>{
-      navigate("/detail")
-     },1000)
+
+  const guardarLocalStorage =  async(id) =>{
+    const docRef = doc(db, "products", id);
+    const docSnap = await getDoc(docRef);
+    localStorage.setItem("detailId", JSON.stringify(docSnap.data()))
+    setTimeout(()=>{
+     navigate("/detail")
+    },1000)
   }
   return (
     <CardsTops onClick={()=>guardarLocalStorage(sellers.id)}>

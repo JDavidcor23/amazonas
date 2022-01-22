@@ -13,6 +13,7 @@ export const FooterC = styled.footer`
     `
 export const Ul = styled.ul`
     display:flex;
+    align-items: center;
     justify-content: space-around;
     width:90%;
 `

@@ -13,6 +13,7 @@ export const ContainerItems = styled.div`
 export const ContainerP = styled.div`
      margin-top:20px;    
      display:flex;
+     height: auto;
      align-items:center;
      flex-direction:column;
      font-size: 1.5rem; 

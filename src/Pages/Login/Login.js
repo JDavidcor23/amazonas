@@ -4,7 +4,7 @@ import { Container, Form, BottonInput } from "../Register/StyledRegister";
 import { DivLinearNew, H5, Ir } from "./StyledLogin.js";
 import { useDispatch } from "react-redux";
 import {useForm } from '../../hooks/useForm';
-import { loginGoogle, loginEmailPassword } from "../../actions/actionLogin";
+import { loginGoogle, loginEmailPassword, loginFacebook } from "../../actions/actionLogin";
 
 const Login = () => {
   const dispatch = useDispatch()
@@ -23,6 +23,9 @@ const handleLogin = (e) => {
 
   const handleGoogle = () => {
     dispatch(loginGoogle());
+}
+  const handleFacebook= () => {
+    dispatch(loginFacebook());
 }
 
   return (
@@ -56,12 +59,15 @@ const handleLogin = (e) => {
         <BottonInput style=
         {{ margin: "20px 0" }}
         type="submit">Continuar</BottonInput>
-
+      </Form>
         <BottonInput 
-        style={{ margin: "20px 0", background:"white", borderColor:"black"}}
+        style={{ margin: "10px 0", background:"white", borderColor:"black", width:"210px"}}
         onClick={handleGoogle}
         ><img src="https://img.icons8.com/color/16/000000/google-logo.png" alt=""/>Iniciar con Google</BottonInput>
-      </Form>
+        <BottonInput 
+        style={{ margin: "10px 0", background:"#3F51B5", color:"white", width:"210px"}}
+        onClick={handleFacebook}
+        ><img src="https://res.cloudinary.com/dhu6ga6hl/image/upload/v1642524270/amazzonas/qijmxlqedsvoe06d3xhp.png" alt="" width="25px"/>Iniciar con Facebook</BottonInput>
       <div style={{ display: "flex" }}>
         <DivLinearNew></DivLinearNew>
         <H5>¿Eres nuevo en Amazonas?</H5>

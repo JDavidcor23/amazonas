@@ -11,11 +11,13 @@ export const Nav = styled.nav`
   }
     `
 export const Ul = styled.nav`
-    width: 95%;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
     padding: 0;
     color: white;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0 20px 0;
     align-items: center;
 `
 export const Li = styled.li`
@@ -40,11 +42,7 @@ export const LiInput = styled.li`
     } 
     
     `
-export const LiCarrito = styled.li`
-    list-style: none;
-    position: relative;
-    
-    `
+
 export const Span = styled.span`
     position: absolute;
     top: -20px;
@@ -64,21 +62,13 @@ export const Logo = styled.img`
         width: 80px;
     }
     `
-export const Carrito = styled.img`
-    height: 30px;
-    @media screen and (max-width: 600px) {
-        height: 20px;
-    }
-`
 export const Button = styled.button`
-    height: 29px;
+    height: 28px;
     border: none;
-    margin: 1px 0 0 0;
     width: 40px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     background: #febd69;
-    position: absolute;
     `
 export const InputSearch = styled.input`
     height: 30px;
@@ -124,9 +114,4 @@ export const ButtonResp = styled.button`
     border-bottom-right-radius: 10px;
     background: #febd69;
     background: "#febd69";
-`
-export const LiLogin = styled.li`
-    list-style: none;
-    display: flex;
-    flex-direction:column;
 `

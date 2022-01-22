@@ -35,7 +35,7 @@ const ItemsCart = () => {
       alt="404"
       />
               :
-      <ContainerP>
+      <ContainerP style={{height: "auto"}}>
         <h2>Carrito</h2>
         <h4 style={{ marginTop: "10px" }}>
            Subtotal(1 productos):<strong>US${sumTotal()}</strong> 
