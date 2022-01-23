@@ -1,9 +1,10 @@
 import React from "react";
 import Swal from "sweetalert2";
+
 import { useDispatch, useSelector } from "react-redux";
 import { clearItemsCart } from "../../actions/actionShopingCart";
 import { useNavigate } from "react-router-dom";
-
+import { paySchema } from "../../Validations/payValidation";
 const FormPay = () => {
   const { items } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
@@ -14,20 +15,26 @@ const FormPay = () => {
     const sum = items.reduce(reducer, 0);
     return sum;
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-  };
-  const payProducts = () => {
-    dispatch(clearItemsCart());
-    Swal.fire({
-      icon: "success",
-      title: "Transacción realizada correctamente",
-      showConfirmButton: false,
-      timer: 2000,
-    });
-    setTimeout(() => {
-      navigate("/");
-    }, 1000);
+    let formData = {
+      creditCard: e.target[0].value,
+      date: e.target[1].value,
+      number: e.target[2].value,
+    }
+    const isValid = await paySchema.isValid(formData)
+    if(isValid){
+      dispatch(clearItemsCart());
+      Swal.fire({
+        icon: "success",
+        title: "Transacción realizada correctamente",
+        showConfirmButton: false,
+        timer: 2000,
+      });
+      setTimeout(() => {
+        navigate("/");
+      }, 1000);
+    }
   };
   return (
     <div
@@ -96,7 +103,7 @@ const FormPay = () => {
               type="submit"
               className="btn btn-warning"
               style={{ width: "200px" }}
-              onClick={() => payProducts()}
+              // onClick={() => payProducts()}
             >
               Pagar
             </button>
