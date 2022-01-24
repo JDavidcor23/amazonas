@@ -9,9 +9,9 @@ const CardsCategories = ({ cat }) => {
   const dispatch = useDispatch()
   const sendCategory = (category)=>{
     dispatch(productListFilterASincrono("", false, category))
-      setTimeout(()=>{
-        navigate("/products")
-      },1000)
+       setTimeout(()=>{
+         navigate("/products")
+       },2500)
   } 
   return (
     <LinkCards onClick={()=>sendCategory(cat.title)} style={{cursor:"pointer"}}>
