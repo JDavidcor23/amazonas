@@ -65,7 +65,7 @@ const Navbar = () => {
       dispatch(productListFilterASincrono(data, true))
        setTimeout(()=>{
          navigate("/products");
-       },1000)
+       },2500)
     }
   });
   const sumCirculo = sumTotal()
